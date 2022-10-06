@@ -6,10 +6,7 @@ import com.gh.service.EmpresaService;
 import com.gh.service.FuncionarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -35,18 +32,22 @@ public class EmpresaController implements BaseController<Empresa> {
     }
 
     @Override
-    public ResponseEntity<Empresa> create(Empresa object) {
-        return null;
+    @PostMapping(path = "/create")
+    public ResponseEntity<Empresa> create(@RequestBody Empresa empresa) {
+        return ResponseEntity.ok().body(this.empresaService.create(empresa));
     }
 
     @Override
-    public ResponseEntity<Empresa> update(Integer id, Empresa object) {
-        return null;
+    @PutMapping(path = "/update/{id}")
+    public ResponseEntity<Empresa> update(@PathVariable(name = "id") Integer id, @RequestBody Empresa empresa) {
+        return ResponseEntity.ok().body(this.empresaService.update(id, empresa));
     }
 
     @Override
-    public ResponseEntity<String> delete(Integer id) {
-        return null;
+    @DeleteMapping(path = "/delete/{id}")
+    public ResponseEntity<String> delete(@PathVariable(name = "id") Integer id) {
+        this.empresaService.delete(id);
+        return ResponseEntity.ok("Empresa deletada com sucesso!");
     }
 
     @GetMapping(path = "/funcionarios/{id}")
