@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(value = "/risco-operacional")
+@RequestMapping(value = "/risco-ocupacional")
 public class RiscoOcupacionalController implements BaseController<RiscoOcupacional> {
     @Autowired
     private RiscoOcupacionalService riscoOcupacionalService;
