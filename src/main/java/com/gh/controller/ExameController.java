@@ -21,7 +21,7 @@ public class ExameController implements BaseController<Exame> {
         return ResponseEntity.ok().body(this.exameService.findAll());
     }
 
-    @GetMapping(path = "all/funcionario/{id}")
+    @GetMapping(path = "/funcionario/{id}")
     public ResponseEntity<List<Exame>> findAllByIdFuncionario(@PathVariable(name = "id") Integer idFuncionario) {
         return ResponseEntity.ok().body(this.exameService.findAllByIdFuncionario(idFuncionario));
     }

@@ -4,10 +4,7 @@ import com.gh.model.RiscoOcupacional;
 import com.gh.service.RiscoOcupacionalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,12 +16,14 @@ public class RiscoOcupacionalController implements BaseController<RiscoOcupacion
     private RiscoOcupacionalService riscoOcupacionalService;
 
     @Override
+    @GetMapping(path = "/all")
     public ResponseEntity<List<RiscoOcupacional>> findAll() {
         return ResponseEntity.ok().body(this.riscoOcupacionalService.findAll());
     }
 
     @Override
-    public ResponseEntity<Optional<RiscoOcupacional>> findById(Integer id) {
+    @GetMapping(path = "/{id}")
+    public ResponseEntity<Optional<RiscoOcupacional>> findById(@PathVariable(name = "id") Integer id) {
         return ResponseEntity.ok().body(this.riscoOcupacionalService.findById(id));
     }
 
@@ -34,17 +33,21 @@ public class RiscoOcupacionalController implements BaseController<RiscoOcupacion
     }
 
     @Override
-    public ResponseEntity<RiscoOcupacional> create(RiscoOcupacional object) {
-        return null;
+    @PostMapping(path = "/create")
+    public ResponseEntity<RiscoOcupacional> create(@RequestBody RiscoOcupacional riscoOcupacional) {
+        return ResponseEntity.ok().body(this.riscoOcupacionalService.create(riscoOcupacional));
     }
 
     @Override
-    public ResponseEntity<RiscoOcupacional> update(Integer id, RiscoOcupacional object) {
-        return null;
+    @PutMapping(path = "/update/{id}")
+    public ResponseEntity<RiscoOcupacional> update(@PathVariable(name = "id") Integer id, @RequestBody RiscoOcupacional riscoOcupacional) {
+        return ResponseEntity.ok().body(this.riscoOcupacionalService.update(id, riscoOcupacional));
     }
 
     @Override
-    public ResponseEntity<String> delete(Integer id) {
-        return null;
+    @DeleteMapping(path = "/delete/{id}")
+    public ResponseEntity<String> delete(@PathVariable(name = "id") Integer id) {
+        this.riscoOcupacionalService.delete(id);
+        return ResponseEntity.ok("Risco ocupacional deletado com sucesso!");
     }
 }
