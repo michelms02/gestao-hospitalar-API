@@ -13,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -71,5 +72,21 @@ public class EmpresaController implements BaseController<Empresa> {
     @GetMapping(path = "/logradouro/{id}")
     public ResponseEntity<Logradouro> findLogradouroById(@PathVariable(name = "id") Integer id) {
         return ResponseEntity.ok().body(this.logradouroService.findByIdEmpresa(id));
+    }
+
+//    @GetMapping(path = "/estatisticas")
+//    public ResponseEntity findAllEstatisticas() {
+//        empresaService.findAllEstatisticas();
+//        return null;
+//    }
+
+    @GetMapping(path = "/maior-risco-ocupacional/{id}")
+    public ResponseEntity<String> findMaiorRiscoByIdEmpresa(@PathVariable(name = "id") Integer id) {
+        return ResponseEntity.ok().body(this.empresaService.findMaiorRiscoByIdEmpresa(id));
+    }
+
+    @GetMapping(path = "/contagem-riscos-ocupacionais/{id}")
+    public ResponseEntity<Map<String, Long>> findContagemRiscosByIdEmpresa(@PathVariable(name = "id") Integer id) {
+        return ResponseEntity.ok().body(this.empresaService.findContagemRiscosByIdEmpresa(id));
     }
 }
