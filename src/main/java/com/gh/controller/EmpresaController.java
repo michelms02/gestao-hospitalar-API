@@ -2,8 +2,11 @@ package com.gh.controller;
 
 import com.gh.model.Empresa;
 import com.gh.model.Funcionario;
+import com.gh.model.Logradouro;
+import com.gh.service.ContatoService;
 import com.gh.service.EmpresaService;
 import com.gh.service.FuncionarioService;
+import com.gh.service.LogradouroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,9 +18,9 @@ import java.util.Optional;
 @RequestMapping(value = "/empresa")
 public class EmpresaController implements BaseController<Empresa> {
     @Autowired
-    EmpresaService empresaService;
+    private EmpresaService empresaService;
     @Autowired
-    FuncionarioService funcionarioService;
+    private FuncionarioService funcionarioService;
 
     @Override
     @GetMapping(path = "/all")
