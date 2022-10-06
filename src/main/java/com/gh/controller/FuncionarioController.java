@@ -4,10 +4,7 @@ import com.gh.model.Funcionario;
 import com.gh.service.FuncionarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,27 +16,33 @@ public class FuncionarioController implements BaseController<Funcionario> {
     private FuncionarioService funcionarioService;
 
     @Override
+    @GetMapping(path = "/all")
     public ResponseEntity<List<Funcionario>> findAll() {
-        return null;
+        return ResponseEntity.ok().body(this.funcionarioService.findAll());
     }
 
     @Override
-    public ResponseEntity<Optional<Funcionario>> findById(Integer id) {
-        return null;
+    @GetMapping(path = "/{id}")
+    public ResponseEntity<Optional<Funcionario>> findById(@PathVariable(name = "id") Integer id) {
+        return ResponseEntity.ok().body(this.funcionarioService.findById(id));
     }
 
     @Override
-    public ResponseEntity<Funcionario> create(Funcionario object) {
-        return null;
+    @PostMapping(path = "/create")
+    public ResponseEntity<Funcionario> create(@RequestBody Funcionario funcionario) {
+        return ResponseEntity.ok().body(this.funcionarioService.create(funcionario));
     }
 
     @Override
-    public ResponseEntity<Funcionario> update(Integer id, Funcionario object) {
-        return null;
+    @PutMapping(path = "/update/{id}")
+    public ResponseEntity<Funcionario> update(@PathVariable(name = "id") Integer id, @RequestBody Funcionario funcionario) {
+        return ResponseEntity.ok().body(this.funcionarioService.update(id, funcionario));
     }
 
     @Override
-    public ResponseEntity<String> delete(Integer id) {
-        return null;
+    @DeleteMapping(path = "/delete/{id}")
+    public ResponseEntity<String> delete(@PathVariable(name = "id") Integer id) {
+        this.funcionarioService.delete(id);
+        return ResponseEntity.ok("Funcionário deletado com sucesso!");
     }
 }
