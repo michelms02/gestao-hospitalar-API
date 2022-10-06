@@ -1,5 +1,6 @@
 package com.gh.controller;
 
+import com.gh.model.Contato;
 import com.gh.model.Empresa;
 import com.gh.model.Funcionario;
 import com.gh.model.Logradouro;
@@ -21,6 +22,10 @@ public class EmpresaController implements BaseController<Empresa> {
     private EmpresaService empresaService;
     @Autowired
     private FuncionarioService funcionarioService;
+    @Autowired
+    private ContatoService contatoService;
+    @Autowired
+    private LogradouroService logradouroService;
 
     @Override
     @GetMapping(path = "/all")
@@ -54,7 +59,17 @@ public class EmpresaController implements BaseController<Empresa> {
     }
 
     @GetMapping(path = "/funcionarios/{id}")
-    public ResponseEntity<List<Funcionario>> findAllFuncionarios(@PathVariable(name = "id") Integer id) {
+    public ResponseEntity<List<Funcionario>> findAllFuncionariosById(@PathVariable(name = "id") Integer id) {
         return ResponseEntity.ok(funcionarioService.findAllByIdEmpresa(id));
+    }
+
+    @GetMapping(path = "/contato/{id}")
+    public ResponseEntity<Contato> findContatoById(@PathVariable(name = "id") Integer id) {
+        return ResponseEntity.ok().body(this.contatoService.findByIdEmpresa(id));
+    }
+
+    @GetMapping(path = "/logradouro/{id}")
+    public ResponseEntity<Logradouro> findLogradouroById(@PathVariable(name = "id") Integer id) {
+        return ResponseEntity.ok().body(this.logradouroService.findByIdEmpresa(id));
     }
 }
