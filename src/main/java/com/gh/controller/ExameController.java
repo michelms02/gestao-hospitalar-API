@@ -4,10 +4,7 @@ import com.gh.model.Exame;
 import com.gh.service.ExameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -19,32 +16,38 @@ public class ExameController implements BaseController<Exame> {
     private ExameService exameService;
 
     @Override
+    @GetMapping(path = "/all")
     public ResponseEntity<List<Exame>> findAll() {
-        return null;
+        return ResponseEntity.ok().body(this.exameService.findAll());
     }
 
-    @GetMapping(path = "/funcionario/{id}")
+    @GetMapping(path = "all/funcionario/{id}")
     public ResponseEntity<List<Exame>> findAllByIdFuncionario(@PathVariable(name = "id") Integer idFuncionario) {
         return ResponseEntity.ok().body(this.exameService.findAllByIdFuncionario(idFuncionario));
     }
 
     @Override
-    public ResponseEntity<Optional<Exame>> findById(Integer id) {
-        return null;
+    @GetMapping(path = "/{id}")
+    public ResponseEntity<Optional<Exame>> findById(@PathVariable(name = "id") Integer id) {
+        return ResponseEntity.ok().body(this.exameService.findById(id));
     }
 
     @Override
-    public ResponseEntity<Exame> create(Exame object) {
-        return null;
+    @PostMapping(path = "/create")
+    public ResponseEntity<Exame> create(@RequestBody Exame exame) {
+        return ResponseEntity.ok().body(this.exameService.create(exame));
     }
 
     @Override
-    public ResponseEntity<Exame> update(Integer id, Exame object) {
-        return null;
+    @PutMapping(path = "/update/{id}")
+    public ResponseEntity<Exame> update(@PathVariable(name = "id") Integer id, @RequestBody Exame exame) {
+        return ResponseEntity.ok().body(this.exameService.update(id, exame));
     }
 
     @Override
-    public ResponseEntity<String> delete(Integer id) {
-        return null;
+    @DeleteMapping(path = "/delete/{id}")
+    public ResponseEntity<String> delete(@PathVariable(name = "id") Integer id) {
+        this.exameService.delete(id);
+        return ResponseEntity.ok("Exame deletado com sucesso!");
     }
 }
