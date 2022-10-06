@@ -22,6 +22,10 @@ public class LogradouroService {
         return this.repository.findById(id);
     }
 
+    public Logradouro findByIdEmpresa(Integer idEmpresa) {
+        return this.repository.findByIdEmpresa(idEmpresa);
+    }
+
     @Transactional
     public Logradouro create(Logradouro logradouro) {
         return this.repository.save(logradouro);

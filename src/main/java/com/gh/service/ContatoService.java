@@ -22,6 +22,10 @@ public class ContatoService {
         return this.repository.findById(id);
     }
 
+    public Contato findByIdEmpresa(Integer idEmpresa) {
+        return this.repository.findByIdEmpresa(idEmpresa);
+    }
+
     @Transactional
     public Contato create(Contato contato) {
         return this.repository.save(contato);

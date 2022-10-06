@@ -6,5 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ContatoRepository extends JpaRepository<Contato, Integer> {
-        /* TODO according to demand */
+    /* TODO according to demand */
+    Contato findByIdEmpresa(Integer idEmpresa);
 }
