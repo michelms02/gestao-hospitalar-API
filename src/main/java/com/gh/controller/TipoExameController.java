@@ -27,6 +27,10 @@ public class TipoExameController implements BaseController<TipoExame> {
         return ResponseEntity.ok().body(this.tipoExameService.findById(id));
     }
 
+    /**
+     * There must be five TipoExame only, there's no need to create, update or delete them.
+     */
+
     @Override
     public ResponseEntity<TipoExame> create(TipoExame object) {
         return null;
