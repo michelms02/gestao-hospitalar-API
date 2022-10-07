@@ -76,13 +76,11 @@ public class EmpresaService {
 //            estatisticas.put(empresa.getId(), tipoMaisComum);
 //        }
 //
-//        System.out.println("Hello World");
 //    }
 
     public String findMaiorRiscoByIdEmpresa(Integer idEmpresa) {
-        Empresa empresa = this.empresaRepository.findById(idEmpresa).orElse(null);
+        List<Funcionario> funcionarios = this.funcionarioRepository.findAllByIdEmpresa(idEmpresa);
         List<String> riscos = new ArrayList<>();
-        List<Funcionario> funcionarios = this.funcionarioRepository.findAllByIdEmpresa(empresa.getId());
 
         for (Funcionario funcionario : funcionarios) {
             List<Exame> exames = this.exameRepository.findAllByIdFuncionario(funcionario.getId());
@@ -105,9 +103,8 @@ public class EmpresaService {
     }
 
     public Map<String, Long> findContagemRiscosByIdEmpresa(Integer idEmpresa) {
-        Empresa empresa = this.empresaRepository.findById(idEmpresa).orElse(null);
+        List<Funcionario> funcionarios = this.funcionarioRepository.findAllByIdEmpresa(idEmpresa);
         List<String> riscos = new ArrayList<>();
-        List<Funcionario> funcionarios = this.funcionarioRepository.findAllByIdEmpresa(empresa.getId());
 
         for (Funcionario funcionario : funcionarios) {
             List<Exame> exames = this.exameRepository.findAllByIdFuncionario(funcionario.getId());
@@ -117,6 +114,6 @@ public class EmpresaService {
             }
         }
 
-        return riscos.stream().collect(Collectors.groupingBy(s -> s, Collectors.counting()));
+        return riscos.stream().collect(Collectors.groupingBy(risco -> risco, Collectors.counting()));
     }
 }
