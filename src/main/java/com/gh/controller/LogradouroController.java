@@ -40,7 +40,7 @@ public class LogradouroController implements BaseController<Logradouro>{
     }
 
     @Override
-    @DeleteMapping(path = "delete/{id}")
+    @DeleteMapping(path = "/delete/{id}")
     public ResponseEntity<String> delete(@PathVariable(name = "id") Integer id) {
         this.logradouroService.delete(id);
         return ResponseEntity.ok("Logradouro deletado com sucesso!");
