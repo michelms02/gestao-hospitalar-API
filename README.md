@@ -1,6 +1,6 @@
-# gestao-hospitalar-API
-University project API
+### Documentação Clínica do Trabalho API
 
+##1. Descrição do Projeto
 Uma clínica do trabalho deseja criar um sistema que fornecerá atestados de saúde
 ocupacional (ASO) para funcionários de suas empresas cadastradas.
 A clínica cadastra as empresas que são clientes dela e os funcionários das mesmas.
