@@ -37,7 +37,6 @@ Path: /all
 Tipo: HTTP GET
 Nome: findById
 Tipo do ID: Integer
-Aceita: JSON
 Path: /{id}
 
 Tipo: HTTP POST
@@ -54,6 +53,5 @@ Path: /update/{id}
 Tipo: HTTP DELETE
 Nome: delete
 Tipo do ID: Integer
-Aceita: JSON
 Path: /delete/{id}
 ```
