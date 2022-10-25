@@ -33,4 +33,27 @@ Uma clínica do trabalho deseja criar um sistema que fornecerá atestados de sa�
 Tipo: HTTP GET
 Nome: findAll
 Path: /all
+
+Tipo: HTTP GET
+Nome: findById
+Tipo do ID: Integer
+Aceita: JSON
+Path: /{id}
+
+Tipo: HTTP POST
+Nome: create
+Aceita: JSON
+Path: /create
+
+Tipo: HTTP PUT
+Nome: update
+Tipo do ID: Integer
+Aceita: JSON
+Path: /update/{id}
+
+Tipo: HTTP DELETE
+Nome: delete
+Tipo do ID: Integer
+Aceita: JSON
+Path: /delete/{id}
 ```
