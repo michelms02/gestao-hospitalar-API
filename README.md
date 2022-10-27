@@ -274,7 +274,7 @@ Tipo do ID: Integer
 Path: /delete/{id}
 ```
 
-#### 4.7 TipoExameController.java
+#### 4.8 TipoExameController.java
 ```
 Endpoint: /tipo-exame
 
