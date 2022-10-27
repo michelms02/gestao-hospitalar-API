@@ -30,6 +30,8 @@ Uma clínica do trabalho deseja criar um sistema que fornecerá atestados de sa�
 
 #### 4.1 ContatoController.java
 ```
+Endpoint: /contato
+
 Tipo: HTTP GET
 Nome: findAll
 Path: /all
@@ -58,6 +60,8 @@ Path: /delete/{id}
 
 #### 4.2 EmpresaController.java
 ```
+Endpoint: /empresa
+
 Tipo: HTTP GET
 Nome: findAll
 Path: /all
@@ -111,6 +115,8 @@ Path: /contagem-riscos-ocupacionais/{id}
 
 #### 4.3 ExameController.java
 ```
+Endpoint: /exame
+
 Tipo: HTTP GET
 Nome: findAll
 Path: /all
@@ -140,6 +146,8 @@ Path: /delete/{id}
 
 #### 4.4 FuncionarioController.java
 ```
+Endpoint: /funcionario
+
 Tipo: HTTP GET
 Nome: findAll
 Path: /all
@@ -168,6 +176,8 @@ Path: /delete/{id}
 
 #### 4.5 LogradouroController.java
 ```
+Endpoint: /logradouro
+
 Tipo: HTTP GET
 Nome: findAll
 Path: /all
@@ -196,6 +206,8 @@ Path: /delete/{id}
 
 #### 4.6 MedicoController.java
 ```
+Endpoint: /medico
+
 Tipo: HTTP GET
 Nome: findAll
 Path: /all
@@ -229,6 +241,8 @@ Path: /delete/{id}
 
 #### 4.7 RiscoOcupacionalController.java
 ```
+Endpoint: /risco-ocupacional
+
 Tipo: HTTP GET
 Nome: findAll
 Path: /all
@@ -262,6 +276,8 @@ Path: /delete/{id}
 
 #### 4.7 TipoExameController.java
 ```
+Endpoint: /tipo-exame
+
 Tipo: HTTP GET
 Nome: findAll
 Path: /all
