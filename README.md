@@ -55,3 +55,224 @@ Nome: delete
 Tipo do ID: Integer
 Path: /delete/{id}
 ```
+
+#### 4.2 EmpresaController.java
+```
+Tipo: HTTP GET
+Nome: findAll
+Path: /all
+
+Tipo: HTTP GET
+Nome: findById
+Tipo do ID: Integer
+Path: /{id}
+
+Tipo: HTTP POST
+Nome: create
+Aceita: JSON
+Path: /create
+
+Tipo: HTTP PUT
+Nome: update
+Tipo do ID: Integer
+Aceita: JSON
+Path: /update/{id}
+
+Tipo: HTTP DELETE
+Nome: delete
+Tipo do ID: Integer
+Path: /delete/{id}
+
+Tipo: HTTP GET
+Nome: findAllFuncionariosById
+Tipo do ID: Integer
+Path: /funcionarios/{id}
+
+Tipo: HTTP GET
+Nome: findContatoById
+Tipo do ID: Integer
+Path: /contato/{id}
+
+Tipo: HTTP GET
+Nome: findLogradouroById
+Tipo do ID: Integer
+Path: /logradouro/{id}
+
+Tipo: HTTP GET
+Nome: findMaiorRiscoByIdEmpresa
+Tipo do ID: Integer
+Path: /maior-risco-ocupacional/{id}
+
+Tipo: HTTP GET
+Nome: findContagemRiscosByIdEmpresa
+Tipo do ID: Integer
+Path: /contagem-riscos-ocupacionais/{id}
+```
+
+#### 4.3 ExameController.java
+```
+Tipo: HTTP GET
+Nome: findAll
+Path: /all
+
+Tipo: HTTP GET
+Nome: findById
+Tipo do ID: Integer
+Path: /{id}
+
+Tipo: HTTP POST
+Nome: create
+Aceita: JSON
+Path: /create
+
+Tipo: HTTP PUT
+Nome: update
+Tipo do ID: Integer
+Aceita: JSON
+Path: /update/{id}
+
+Tipo: HTTP DELETE
+Nome: delete
+Tipo do ID: Integer
+Path: /delete/{id}
+```
+
+
+#### 4.4 FuncionarioController.java
+```
+Tipo: HTTP GET
+Nome: findAll
+Path: /all
+
+Tipo: HTTP GET
+Nome: findById
+Tipo do ID: Integer
+Path: /{id}
+
+Tipo: HTTP POST
+Nome: create
+Aceita: JSON
+Path: /create
+
+Tipo: HTTP PUT
+Nome: update
+Tipo do ID: Integer
+Aceita: JSON
+Path: /update/{id}
+
+Tipo: HTTP DELETE
+Nome: delete
+Tipo do ID: Integer
+Path: /delete/{id}
+```
+
+#### 4.5 LogradouroController.java
+```
+Tipo: HTTP GET
+Nome: findAll
+Path: /all
+
+Tipo: HTTP GET
+Nome: findById
+Tipo do ID: Integer
+Path: /{id}
+
+Tipo: HTTP POST
+Nome: create
+Aceita: JSON
+Path: /create
+
+Tipo: HTTP PUT
+Nome: update
+Tipo do ID: Integer
+Aceita: JSON
+Path: /update/{id}
+
+Tipo: HTTP DELETE
+Nome: delete
+Tipo do ID: Integer
+Path: /delete/{id}
+```
+
+#### 4.6 MedicoController.java
+```
+Tipo: HTTP GET
+Nome: findAll
+Path: /all
+
+Tipo: HTTP GET
+Nome: findById
+Tipo do ID: Integer
+Path: /{id}
+
+Tipo: HTTP GET
+Nome: findByCrm
+Tipo do CRM: String
+Path: /{crm}
+
+Tipo: HTTP POST
+Nome: create
+Aceita: JSON
+Path: /create
+
+Tipo: HTTP PUT
+Nome: update
+Tipo do ID: Integer
+Aceita: JSON
+Path: /update/{id}
+
+Tipo: HTTP DELETE
+Nome: delete
+Tipo do ID: Integer
+Path: /delete/{id}
+```
+
+#### 4.7 RiscoOcupacionalController.java
+```
+Tipo: HTTP GET
+Nome: findAll
+Path: /all
+
+Tipo: HTTP GET
+Nome: findById
+Tipo do ID: Integer
+Path: /{id}
+
+Tipo: HTTP GET
+Nome: findByIdExame
+Tipo do ID: Integer
+Path: /exame/{id}
+
+Tipo: HTTP POST
+Nome: create
+Aceita: JSON
+Path: /create
+
+Tipo: HTTP PUT
+Nome: update
+Tipo do ID: Integer
+Aceita: JSON
+Path: /update/{id}
+
+Tipo: HTTP DELETE
+Nome: delete
+Tipo do ID: Integer
+Path: /delete/{id}
+```
+
+#### 4.7 TipoExameController.java
+```
+Tipo: HTTP GET
+Nome: findAll
+Path: /all
+
+Tipo: HTTP GET
+Nome: findById
+Tipo do ID: Integer
+Path: /{id}
+
+Tipo: HTTP GET
+Nome: findByIdExame
+Tipo do ID: Integer
+Path: /exame/{id}
+```
